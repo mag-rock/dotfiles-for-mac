@@ -1,19 +1,40 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/cask-drivers"
+brew "mas"
+brew "zsh-completions"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+# brewでgitをインストールする事により
+# zsh-completion用のgitの設定ファイルを/usr/local/share/zsh/site-functions以下に置く
+# https://www.setoya-blog.com/entry/2020/06/11/115558
+brew "git"
 cask "docker"
 cask "firefox"
-cask "google-chrome"
+cask "karabiner-elements"
+cask "microsoft-auto-update"
+cask "microsoft-office"
 cask "notion"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
-cask "karabiner-elements"
-mas "Kindle", id: 405399194
+cask "vlc"
+# .appファイルのインストールのため、手動でインストールすること
+# cask "logi-options-plus"
+cask "elgato-stream-deck"
+cask "intellij-idea"
+cask "obsidian"
+cask "alfred"
+cask "discord"
+cask "evernote"
+cask "dropbox"
+cask "cheatsheet"
+cask "kindle"
 mas "LINE", id: 539883307
+mas "Yoink", id: 457622435
 
 # tap "adoptopenjdk/openjdk"
-# brew "bash-completion"
 # brew "carthage"
 # brew "cmark"
 # brew "cocoapods"
@@ -26,5 +47,5 @@ mas "LINE", id: 539883307
 # brew "nodebrew"
 # brew "nvm"
 # brew "openjdk@11"
-# brew "zsh-completions"
+# 
 # cask "oracle-jdk"

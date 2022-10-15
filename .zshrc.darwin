@@ -1,69 +1,137 @@
-## PATH
+# PATH
 export PATH="$HOME/.jenv/shims:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
-## key-binding
+# key-binding
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line 
 
-
-## start-up
-# zsh-comletions
-if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-
-# git-promptの読み込み
-source ~/.zsh/git-prompt.sh
-
-# git-completionの読み込み
-fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-autoload -Uz compinit && compinit
-
-# プロンプトのオプション表示設定
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUPSTREAM=auto
-
-# プロンプトの表示設定(好きなようにカスタマイズ可)
-setopt PROMPT_SUBST ; PS1='%F{green}%n@%m%f: %F{cyan}%~%f %F{red}$(__git_ps1 "(%s)")%f
-\$ '
-
-### alias
-# cd to @Develoment
+# alias
+## cd
+### cd to @Develoment
 alias cd-dev='cd ~/Dropbox/@Development/'
-# ls -l
-alias ll='ls -la'
+### cd to dotfiles
+alias cd-dots='cd ~/workspace/dotfiles/'
 
+## ls
+alias ll='ls -laF --color=always'
 ## zshrc
 alias s-zshrc='source ~/.zshrc'
 alias code-zshrc='code ~/.zshrc'
 
 ## git
-# 
 alias g-log='git log'
 alias g-st='git status'eval export PATH="/Users/ytk/.jenv/shims:${PATH}"
 
-## Java
-export JENV_SHELL=zsh
-export JENV_LOADED=1
-unset JAVA_HOME
-source '/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
-jenv rehash 2>/dev/null
-jenv refresh-plugins
-jenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
+############################
+# 基本設定の読み込み
+# 右記記事を参考にした https://qiita.com/tanipen/items/7bc4f91e6025996f5e96
+############################
 
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
+# 履歴ファイルを明示
+HISTFILE=~/.zsh_history
+
+# colors関数の読み込み
+autoload -Uz colors && colors
+# compinit関数の読み込み（タブ補完に必要）
+autoload -Uz compinit && compinit
+
+
+# ビープ音を鳴らさない
+setopt nolistbeep
+# コマンドのスペルミスを指摘する
+setopt correct
+
+# 単語の入力途中でもTab補完を有効化
+setopt complete_in_word
+# 補完リストの表示間隔を狭くする
+setopt list_packed
+
+# 補完候補にls --colorsと同じ色をつける 
+zstyle ':completion:*' list-colors "${LS_COLORS}"
+# 補完候補をハイライト
+zstyle ':completion:*:default' menu select=1
+# キャッシュの利用による補完の高速化
+zstyle ':completion::complete:*' use-cache true
+# 大文字、小文字を区別せず補完する
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# コマンド実行後に1行空ける
+add_newline() {
+  if [[ -z $PS1_NEWLINE_LOGIN ]]; then
+    PS1_NEWLINE_LOGIN=true
+  else
+    printf '\n'
+  fi
+}
+precmd() { add_newline }
+
+
+############################
+# zsh-pluginの読み込み
+############################
+
+## zsh-completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
+## zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+## zsh-syntax-highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## zsh-syntax-highlightingの設定
+ZSH_HIGHLIGHTING_HIGHLIGHTERS=(main brackets cursor)
+typeset -A ZSH_HIGHLIGHT_STYLES
+# ZSH_HIGHLIGHT_STYLES[precommand]='{155},bold'
+# ZSH_HIGHLIGHT_STYLES[command]='fg=190'
+# ZSH_HIGHLIGHT_STYLES[builtin]='fg=178'
+# ZSH_HIGHLIGHT_STYLES[precommand]='fg=190,bold'
+# ZSH_HIGHLIGHT_STYLES[command]='fg=190'
+# ZSH_HIGHLIGHT_STYLES[builtin]='fg=178'
+
+
+############################
+# git関連の読み込み
+############################
+# git prompt の読み込み
+source /opt/homebrew/Cellar/git/2.38.0/etc/bash_completion.d/git-prompt.sh
+
+## 変数の意味は右記記事を参考にしたhttps://runebook.dev/ja/docs/fish/cmds/fish_git_prompt
+# 変更があり、ステージングされていないファイルに関する状態を表示
+GIT_PS1_SHOWDIRTYSTATE=true
+# 追跡されていないファイルの有無を表示
+GIT_PS1_SHOWUNTRACKEDFILES=true
+# Stashの状態を表示
+GIT_PS1_SHOWSTASHSTATE=true
+# HEADとUPSTREAMの差分の要約を表示
+GIT_PS1_SHOWUPSTREAM=auto
+
+setopt PROMPT_SUBST; 
+
+# yy-mm-dd hh:mm:ss
+PROMPT='%F{007}[%D %*]%f'
+# ~/currentdir
+PROMPT=$PROMPT' %F{157}%~%f'
+# Git関連情報を表示
+PROMPT=$PROMPT' %F{127}$(__git_ps1 "(%s)")%f'
+# 改行後、ユーザ種別
+PROMPT=$PS1'
+%F{007}%#%f'
+
+#　256色を一覧表示する関数
+colorlist() {
+	for color in {000..015}; do
+		print -nP "%F{$color}$color %f"
+	done
+	printf "\n"
+	for color in {016..255}; do
+		print -nP "%F{$color}$color %f"
+		if [ $(($((color-16))%6)) -eq 5 ]; then
+			printf "\n"
+		fi
+	done
 }
