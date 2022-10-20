@@ -1,0 +1,552 @@
+{
+	"title": "enthumble + (Windows App) Mode",
+	"rules": [
+		{
+			"description": "(enthumble +) Base setting",
+			"extra_descriptions": [
+				"Enable enthumble mode with international5 and lang2"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "international5",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"set_variable": {
+								"name": "enthumble_mode",
+								"value": 1
+							}
+						}
+					],
+					"to_after_key_up": [
+						{
+							"set_variable": {
+								"name": "enthumble_mode",
+								"value": 0
+							}
+						}
+					],
+					"to_if_alone": [
+						{
+							"key_code": "japanese_eisuu"
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "lang2",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"set_variable": {
+								"name": "enthumble_mode",
+								"value": 1
+							}
+						}
+					],
+					"to_after_key_up": [
+						{
+							"set_variable": {
+								"name": "enthumble_mode",
+								"value": 0
+							}
+						}
+					],
+					"to_if_alone": [
+						{
+							"key_code": "japanese_eisuu"
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) Swap Cmd and Opt in Enthumble mode",
+			"extra_descriptions": [
+				"Enable enthumble mode with international5 and lang2"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "left_command",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_option"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "left_option",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_command"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) IJKL Mode",
+			"extra_descriptions": [
+				"無変換/英数 + J, K, I, L -> カーソル移動（←, ↓, ↑, →）"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "j",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_arrow"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "k",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "down_arrow"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "i",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "up_arrow"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "l",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "right_arrow"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) 無変換/英数 + o/p」で「Return/command-Down」",
+			"extra_descriptions": [
+				"無変換/英数 + o/p -> Enter/command-down_arrow"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "o",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "return_or_enter"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "p",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "down_arrow",
+							"modifiers": [
+								"command"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) 無変換/英数 + n/m」で「PageUp/PageDown」",
+			"extra_descriptions": [
+				"無変換/英数 + n/m -> pageUp/PageDown"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "n",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "page_up"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "m",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "page_down"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) 無変換/英数 + h/;」で「Cmd←/→」",
+			"extra_descriptions": [
+				"無変換/英数 + h/; -> Cmd←/→"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "h",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "left_arrow",
+							"modifiers": [
+								"command"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "semicolon",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "right_arrow",
+							"modifiers": [
+								"command"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) 無変換/英数 + 「Space/かな」で「BackSpace/Delete」",
+			"extra_descriptions": [
+				"無変換/英数 + Space -> BackSpace",
+				"無変換/英数 + かな -> Delete"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "spacebar",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "delete_or_backspace"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "japanese_kana",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "delete_forward"
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) 無変換/英数 + 「,/. タブ切り替え」",
+			"extra_descriptions": [
+				"無変換/英数 + ',' -> Ctrl + Shift + Tab",
+				"無変換/英数 + '.' -> Ctrl + Tab"
+			],
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "comma",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "tab",
+							"modifiers": [
+								"control",
+								"shift"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "period",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "tab",
+							"modifiers": [
+								"control"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "(enthumble +) 無変換/英数 + 「v」で書式なしペースト",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "v",
+						"modifiers": {
+							"optional": [
+								"any"
+							]
+						}
+					},
+					"to": [
+						{
+							"key_code": "v",
+							"modifiers": [
+								"command",
+								"shift",
+								"option"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "variable_if",
+							"name": "enthumble_mode",
+							"value": 1
+						}
+					]
+				}
+			]
+		}
+	]
+}

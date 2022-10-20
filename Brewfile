@@ -10,6 +10,7 @@ brew "zsh-syntax-highlighting"
 # zsh-completion用のgitの設定ファイルを/usr/local/share/zsh/site-functions以下に置く
 # https://www.setoya-blog.com/entry/2020/06/11/115558
 brew "git"
+brew "trash-cli"
 cask "docker"
 cask "firefox"
 cask "karabiner-elements"
@@ -20,6 +21,7 @@ cask "slack"
 cask "visual-studio-code"
 cask "zoom"
 cask "vlc"
+cask "deepl"
 # .appファイルのインストールのため、手動でインストールすること
 # cask "logi-options-plus"
 cask "elgato-stream-deck"
