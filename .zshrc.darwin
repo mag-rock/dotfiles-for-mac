@@ -102,7 +102,7 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 # git関連の読み込み
 ############################
 # git prompt の読み込み
-source /opt/homebrew/Cellar/git/2.38.0/etc/bash_completion.d/git-prompt.sh
+source /opt/homebrew/Cellar/git/*/etc/bash_completion.d/git-prompt.sh
 
 ## 変数の意味は右記記事を参考にしたhttps://runebook.dev/ja/docs/fish/cmds/fish_git_prompt
 # 変更があり、ステージングされていないファイルに関する状態を表示
