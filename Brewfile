@@ -6,14 +6,15 @@ brew "mas"
 brew "zsh-completions"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
-brew "zsh-git-prompt"
 # brewでgitをインストールする事により
 # zsh-completion用のgitの設定ファイルを/usr/local/share/zsh/site-functions以下に置く
 # https://www.setoya-blog.com/entry/2020/06/11/115558
 brew "git"
 brew "trash-cli"
+brew "unzip"
 cask "docker"
 cask "firefox"
+cask "microsoft-edge"
 cask "karabiner-elements"
 cask "microsoft-auto-update"
 cask "microsoft-office"
@@ -27,6 +28,8 @@ cask "deepl"
 # cask "logi-options-plus"
 cask "elgato-stream-deck"
 cask "intellij-idea"
+cask "dbeaver-community"
+cask "tableplus"
 cask "webstorm"
 cask "obsidian"
 cask "alfred"
@@ -36,9 +39,12 @@ cask "dropbox"
 cask "cheatsheet"
 cask "kindle"
 cask "tweeten"
+cask "google-japanese-ime"
 mas "LINE", id: 539883307
 mas "Yoink", id: 457622435
 
+# クライアント開発
+brew "volta"
 # tap "adoptopenjdk/openjdk"
 # brew "carthage"
 # brew "cmark"

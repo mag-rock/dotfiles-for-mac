@@ -2,6 +2,8 @@
 export PATH="$HOME/.jenv/shims:$PATH"
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # key-binding
 # bindkey "^[[H" beginning-of-line
