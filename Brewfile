@@ -45,6 +45,9 @@ mas "Yoink", id: 457622435
 
 # クライアント開発
 brew "volta"
+brew "uv"
+# Google Cloud CLI
+cask "google-cloud-sdk"
 # tap "adoptopenjdk/openjdk"
 # brew "carthage"
 # brew "cmark"
