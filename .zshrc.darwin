@@ -6,9 +6,7 @@ if [ -f "$HOME/workspace/dotfiles/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$HOME/workspace/dotfiles/google-cloud-sdk/completion.zsh.inc"
 fi
 # PATH
-export PATH="$HOME/.jenv/shims:$PATH"
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -28,14 +26,14 @@ alias cd-dev='cd ~/Dropbox/@Development/'
 alias cd-dots='cd ~/workspace/dotfiles/'
 
 ## ls
-alias ll='ls -laF --color=always'
+alias ll='ls -laFG'
 ## zshrc
 alias s-zshrc='source ~/.zshrc'
 alias code-zshrc='code ~/.zshrc'
 
 ## git
 alias g-log='git log'
-alias g-st='git status'eval export PATH="/Users/ytk/.jenv/shims:${PATH}"
+alias g-st='git status'
 
 ############################
 # 基本設定の読み込み

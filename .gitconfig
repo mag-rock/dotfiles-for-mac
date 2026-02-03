@@ -1,7 +1,42 @@
 [user]
-	name = ytk
+	name = mag-rock
 	email = y.takahashi.la89@gmail.com
+
 [core]
 	autocrlf = input
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[diff]
+	colorMoved = zebra
+
 [color]
-    ui = auto
+	ui = auto
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	cm = commit -m
+	ca = commit --amend
+	df = diff
+	dfc = diff --cached
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	undo = reset --soft HEAD^

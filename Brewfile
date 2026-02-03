@@ -2,64 +2,120 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/cask-drivers"
+
+# =============================================================================
+# CLI Tools
+# =============================================================================
+
+## Package Manager
 brew "mas"
+
+## Shell Enhancement
 brew "zsh-completions"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+brew "zsh-git-prompt"
+brew "starship"
+
+## Development Tools
 # brewでgitをインストールする事により
 # zsh-completion用のgitの設定ファイルを/usr/local/share/zsh/site-functions以下に置く
 # https://www.setoya-blog.com/entry/2020/06/11/115558
 brew "git"
+brew "gh"
+brew "jq"
+
+## Utilities
 brew "trash-cli"
 brew "unzip"
-cask "docker"
+
+# =============================================================================
+# Web Browsers
+# =============================================================================
 cask "firefox"
 cask "microsoft-edge"
-cask "karabiner-elements"
-cask "microsoft-auto-update"
-cask "microsoft-office"
-cask "notion"
+cask "google-chrome"
+
+# =============================================================================
+# Communication & Collaboration
+# =============================================================================
 cask "slack"
-cask "visual-studio-code"
 cask "zoom"
-cask "vlc"
-cask "deepl"
-# .appファイルのインストールのため、手動でインストールすること
-# cask "logi-options-plus"
-cask "elgato-stream-deck"
+cask "discord"
+cask "notion"
+cask "evernote"
+
+# =============================================================================
+# Development Environment
+# =============================================================================
+
+## Editors & IDEs
+cask "visual-studio-code"
+cask "cursor"
 cask "intellij-idea"
+cask "webstorm"
+cask "jetbrains-toolbox"
+
+## Terminals
+cask "ghostty"
+
+## Containers & Cloud
+cask "docker"
+cask "google-cloud-sdk"
+
+## AI Tools
+cask "chatgpt"
+
+# =============================================================================
+# Database Tools
+# =============================================================================
 cask "dbeaver-community"
 cask "tableplus"
-cask "webstorm"
-cask "obsidian"
-cask "alfred"
-cask "discord"
-cask "evernote"
-cask "dropbox"
-cask "cheatsheet"
-cask "kindle"
-cask "tweeten"
-cask "google-japanese-ime"
-mas "LINE", id: 539883307
-mas "Yoink", id: 457622435
 
-# クライアント開発
+# =============================================================================
+# Media
+# =============================================================================
+cask "vlc"
+cask "shotcut"
+cask "kindle"
+
+# =============================================================================
+# Translation
+# =============================================================================
+cask "deepl"
+cask "nani"
+
+# =============================================================================
+# Utilities
+# =============================================================================
+cask "alfred"
+cask "karabiner-elements"
+cask "cheatsheet"
+cask "dropbox"
+cask "tailscale-app"
+cask "balenaetcher"
+cask "elgato-stream-deck"
+cask "google-japanese-ime"
+
+## Security Tools
+cask "zap"
+
+## Microsoft
+cask "microsoft-auto-update"
+cask "microsoft-office"
+
+## Manual Installation Required
+# .appファイルのインストールのため、手動でインストールすること
+# cask "logi-options-plus"
+
+# =============================================================================
+# Development - Client Side
+# =============================================================================
 brew "volta"
 brew "uv"
-# Google Cloud CLI
-cask "google-cloud-sdk"
-# tap "adoptopenjdk/openjdk"
-# brew "carthage"
-# brew "cmark"
-# brew "cocoapods"
-# brew "coreutils"
-# brew "google-java-format"
-# brew "gradle"
-# brew "jenv"
-# brew "libpq"
-# brew "node"
-# brew "nodebrew"
-# brew "nvm"
-# brew "openjdk@11"
-# 
-# cask "oracle-jdk"
+
+# =============================================================================
+# Mac App Store
+# =============================================================================
+mas "LINE", id: 539883307
+mas "Yoink", id: 457622435
