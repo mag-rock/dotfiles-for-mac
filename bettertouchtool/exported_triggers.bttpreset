@@ -1,0 +1,192 @@
+[
+  {
+    "BTTLastUpdatedAt" : 1770562529.7248611,
+    "BTTTriggerType" : 112,
+    "BTTTriggerTypeDescriptionReadOnly" : "3本指でクリック",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "BF8E7630-A3E6-4A8A-973A-27E5F9972722",
+    "BTTOrder" : 1,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1770482867.289835,
+        "BTTTriggerParentUUID" : "BF8E7630-A3E6-4A8A-973A-27E5F9972722",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "775BC51C-AC01-4283-9DD2-75CE7222B637",
+        "BTTPredefinedActionType" : 100,
+        "BTTPredefinedActionName" : "開いているすべてのアプリのウィンドウスイッチャーを表示",
+        "BTTAdditionalActionData" : {
+          "BTTWindowSwitcherHeight" : 500,
+          "BTTWindowSwitcherItemHeight" : 30,
+          "BTTWindowSwitcherWidth" : 380,
+          "BTTWindowSwitcherOverrideDefaultShortcuts" : true,
+          "BTTWindowSwitcherShowThumbnail" : 1,
+          "BTTWindowSwitcherExcludeHiddenAndMinimizedWindows" : false,
+          "BTTWindowSwitcherDisableMouseHover" : false,
+          "BTTWindowSwitcherExcludeAllButHiddenAndMinimizedWindows" : false,
+          "BTTWindowSwitcherSelectNextOnRepeat" : false,
+          "BTTWindowSwitcherExcludeSpecific" : false,
+          "BTTWindowSwitcherInitialFocus" : 1,
+          "BTTWindowSwitcherTriggerOnRelease" : false,
+          "BTTWindowSwitcherFocus" : 0,
+          "BTTWindowSwitcherShowPopover" : 0,
+          "BTTWindowSwitcherAppearance" : 0,
+          "BTTWindowSwitcherExcludeVisibleWindows" : false,
+          "BTTWindowSwitcherFontSize" : 12,
+          "BTTWindowSwitcherExclude" : "",
+          "BTTWindowSwitcherAction4" : "15",
+          "BTTWindowSwitcherSort" : 0,
+          "BTTWindowSwitcherExcludeWindowsFromOtherSpaces" : false,
+          "BTTWindowSwitcherAction5" : "17",
+          "BTTWindowSwitcherMousePos" : 0
+        },
+        "BTTOrder" : 1
+      }
+    ]
+  },
+  {
+    "BTTLastUpdatedAt" : 1770562535.2698221,
+    "BTTTriggerType" : 112,
+    "BTTTriggerTypeDescriptionReadOnly" : "3本指でクリック",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "2C9C47AC-0C34-4DA9-AC3D-21FEA5E651BF",
+    "BTTEnabled2" : 0,
+    "BTTOrder" : 2,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1770482618.8664441,
+        "BTTTriggerParentUUID" : "2C9C47AC-0C34-4DA9-AC3D-21FEA5E651BF",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "8E771D7B-D518-495C-8F0E-2D4482FA493A",
+        "BTTPredefinedActionType" : 99,
+        "BTTPredefinedActionName" : "アクティブなアプリのウィンドウスイッチャーを表示",
+        "BTTAdditionalActionData" : {
+          "BTTWindowSwitcherHeight" : 500,
+          "BTTWindowSwitcherItemHeight" : 30,
+          "BTTWindowSwitcherWidth" : 380,
+          "BTTWindowSwitcherAction3" : "20",
+          "BTTWindowSwitcherOverrideDefaultShortcuts" : false,
+          "BTTWindowSwitcherAction8" : "1",
+          "BTTWindowSwitcherAction1" : "18",
+          "BTTWindowSwitcherShowThumbnail" : 1,
+          "BTTWindowSwitcherExcludeHiddenAndMinimizedWindows" : false,
+          "BTTWindowSwitcherDisableMouseHover" : false,
+          "BTTWindowSwitcherAction6" : "14",
+          "BTTWindowSwitcherExcludeAllButHiddenAndMinimizedWindows" : false,
+          "BTTWindowSwitcherSelectNextOnRepeat" : false,
+          "BTTWindowSwitcherExcludeSpecific" : false,
+          "BTTWindowSwitcherInitialFocus" : 1,
+          "BTTWindowSwitcherTriggerOnRelease" : false,
+          "BTTWindowSwitcherFocus" : 0,
+          "BTTWindowSwitcherShowPopover" : 0,
+          "BTTWindowSwitcherAppearance" : 0,
+          "BTTWindowSwitcherExcludeVisibleWindows" : false,
+          "BTTWindowSwitcherFontSize" : 12,
+          "BTTWindowSwitcherExclude" : "",
+          "BTTWindowSwitcherAction4" : "12",
+          "BTTWindowSwitcherAction9" : "2",
+          "BTTWindowSwitcherSort" : 0,
+          "BTTWindowSwitcherAction10" : "7",
+          "BTTWindowSwitcherAction2" : "19",
+          "BTTWindowSwitcherAction11" : "6",
+          "BTTWindowSwitcherExcludeWindowsFromOtherSpaces" : false,
+          "BTTWindowSwitcherAction5" : "13",
+          "BTTWindowSwitcherAction7" : "0",
+          "BTTWindowSwitcherMousePos" : 0
+        },
+        "BTTOrder" : 1
+      }
+    ]
+  },
+  {
+    "BTTLastUpdatedAt" : 1770482278.8224039,
+    "BTTTriggerType" : 101,
+    "BTTTriggerTypeDescriptionReadOnly" : "3本指で右にスワイプ",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "6A315389-D7F9-4D8F-9E2E-D1EB8D2BDE5D",
+    "BTTRepeatRate" : 0.20000000298023224,
+    "BTTOrder" : 3,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1770479097.896559,
+        "BTTTriggerParentUUID" : "6A315389-D7F9-4D8F-9E2E-D1EB8D2BDE5D",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "62747C41-3E1E-43DB-B845-4E00D51CCF31",
+        "BTTLayoutIndependentActionChar" : "TAB",
+        "BTTShortcutToSend" : "59,56,48",
+        "BTTOrder" : 2
+      }
+    ],
+    "BTTTriggerConfig" : {
+      "BTTNoTouchTimeout" : 0,
+      "BTTGestureForceFeedbackPattern" : 16
+    }
+  },
+  {
+    "BTTLastUpdatedAt" : 1770482278.822356,
+    "BTTTriggerType" : 100,
+    "BTTTriggerTypeDescriptionReadOnly" : "3本指で左にスワイプ",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "E827D81F-87F9-459D-ACDE-9E52A803599E",
+    "BTTRepeatRate" : 0.20000000298023224,
+    "BTTOrder" : 4,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1770479157.7192259,
+        "BTTTriggerParentUUID" : "E827D81F-87F9-459D-ACDE-9E52A803599E",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "292A31BD-D86C-47EB-8C1A-42F8AEA66CA1",
+        "BTTLayoutIndependentActionChar" : "TAB",
+        "BTTShortcutToSend" : "59,48",
+        "BTTOrder" : 3
+      }
+    ],
+    "BTTTriggerConfig" : {
+      "BTTNoTouchTimeout" : 0,
+      "BTTGestureForceFeedbackPattern" : 16
+    }
+  },
+  {
+    "BTTLastUpdatedAt" : 1770483400.434797,
+    "BTTTriggerType" : 102,
+    "BTTTriggerTypeDescriptionReadOnly" : "3本指で上にスワイプ",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "2D85CB09-BE6C-44B3-9004-506E9537627A",
+    "BTTOrder" : 5,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1770483409.2898879,
+        "BTTTriggerParentUUID" : "2D85CB09-BE6C-44B3-9004-506E9537627A",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "76A2D5D2-E1F6-4258-8A56-B5ED1F07DBA1",
+        "BTTPredefinedActionType" : 5,
+        "BTTPredefinedActionName" : "ミッションコントロール",
+        "BTTOrder" : 8
+      }
+    ]
+  },
+  {
+    "BTTLastUpdatedAt" : 1770483495.2153239,
+    "BTTTriggerType" : 103,
+    "BTTTriggerTypeDescriptionReadOnly" : "3本指でスワイプダウン",
+    "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+    "BTTUUID" : "D7E10E8F-8BB0-4A7D-8D6A-A38B937D6A80",
+    "BTTOrder" : 6,
+    "BTTActionsToExecute" : [
+      {
+        "BTTLastUpdatedAt" : 1770483492.4394951,
+        "BTTTriggerParentUUID" : "D7E10E8F-8BB0-4A7D-8D6A-A38B937D6A80",
+        "BTTIsPureAction" : true,
+        "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+        "BTTUUID" : "41434F4B-8AD5-432C-8998-FF120AD0C9C3",
+        "BTTPredefinedActionType" : 6,
+        "BTTPredefinedActionName" : "アプリケーション公開",
+        "BTTOrder" : 9
+      }
+    ]
+  }
+]
